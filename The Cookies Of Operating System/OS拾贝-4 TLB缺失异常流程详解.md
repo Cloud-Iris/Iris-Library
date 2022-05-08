@@ -137,4 +137,4 @@ lcontext((u_int)(e->env_pgdir));
 
 然后是具体体现 **在TLB重填时发挥作用**——genex.S中的 do_refill 宏函数。
 
-具体解析参考上期甜点。
+具体解析参考[上期甜点](https://github.com/Cloud-Iris/Iris-Library/blob/main/The%20Cookies%20Of%20Operating%20System/OS%E6%8B%BE%E8%B4%9D-3.pdf)。
