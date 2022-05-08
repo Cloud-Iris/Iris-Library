@@ -18,7 +18,7 @@ TLB 对应的中断处理函数是 handle_tlb，通过宏映射到了 do_refill 
 
 ### 硬件为我们做了什么？
 
-在发生 TLB 缺失的时候，会把引发 TLB 缺失的虚拟 地址填入到 BadVAddr Register 中，这个寄存器具体的含义请参看 MIPS 手册。接 着触发一个 TLB 缺失异常。
+在发生 TLB 缺失的时候，会把引发 TLB 缺失的虚拟 地址填入到 BadVAddr Register 中。接着触发一个 TLB 缺失异常。
 
 ### BadVAddr Register 
 
