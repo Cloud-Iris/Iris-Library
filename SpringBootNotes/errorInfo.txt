@@ -1,0 +1,50 @@
+org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'commentMapper' defined in file [F:\MavenProject\imooc-red-book-dev\book-mapper\target\classes\com\imooc\mapper\CommentMapper.class]: 
+Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; 
+nested exception is org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'sqlSessionFactory' defined in class path resource [tk/mybatis/mapper/autoconfigure/MapperAutoConfiguration.class]: 
+Bean instantiation via factory method failed; 
+nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: 
+Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: 
+Failed to parse mapping resource: 'file [F:\MavenProject\imooc-red-book-dev\book-mapper\target\classes\mapper\UsersMapper.xml]'; 
+nested exception is org.apache.ibatis.builder.BuilderException: 
+Error parsing Mapper XML. 
+The XML location is 'file [F:\MavenProject\imooc-red-book-dev\book-mapper\target\classes\mapper\UsersMapper.xml]'. 
+Cause: java.lang.IllegalArgumentException: Result Maps collection already contains value for com.imooc.mapper.UsersMapper.BaseResultMap
+
+
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisConverter': 
+Unsatisfied dependency expressed through constructor parameter 0: Could not convert argument value of type [org.springframework.data.keyvalue.core.mapping.context.KeyValueMappingContext] to required type [org.springframework.data.redis.core.mapping.RedisMappingContext]: Failed to convert value of type 'org.springframework.data.keyvalue.core.mapping.context.KeyValueMappingContext' to required type 'org.springframework.data.redis.core.mapping.RedisMappingContext'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'org.springframework.data.keyvalue.core.mapping.context.KeyValueMappingContext' to required type 'org.springframework.data.redis.core.mapping.RedisMappingContext': no matching editors or conversion strategy found
+
+可以搜索redis:       repositories:         enabled: false
+
+Exception encountered during context initialization - cancelling refresh attempt: 
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'redisConverter': 
+Unsatisfied dependency expressed through constructor parameter 0: 
+Could not convert argument value of type [org.springframework.data.keyvalue.core.mapping.context.KeyValueMappingContext] to required type [org.springframework.data.redis.core.mapping.RedisMappingContext]: 
+Failed to convert value of type 'org.springframework.data.keyvalue.core.mapping.context.KeyValueMappingContext' to required type 'org.springframework.data.redis.core.mapping.RedisMappingContext'; 
+nested exception is java.lang.IllegalStateException: 
+Cannot convert value of type 'org.springframework.data.keyvalue.core.mapping.context.KeyValueMappingContext' to required type 'org.springframework.data.redis.core.mapping.RedisMappingContext': 
+no matching editors or conversion strategy found
+
+
+报下面的错，可能是因为开发者工具spring-boot-devtools之前装过了旧的版本，我是在另一个项目中使用了2.5.1，因此在pom文件的相关位置加入<version>2.5.1</version>就好了
+org.springframework.boot:spring-boot-devtools:pom:2.7.0 failed to transfer from https://repo.maven.apache.org/maven2 during a previous attempt. 
+This failure was cached in the local repository and resolution is not reattempted until the update interval of central has elapsed or updates are forced. 
+Original error: Could not transfer artifact org.springframework.boot:spring-boot-devtools:pom:2.7.0 from/to central (https://repo.maven.apache.org/maven2): 
+transfer failed for https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-devtools/2.7.0/spring-boot-devtools-2.7.0.pom
+
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'demoApi': 
+Unsatisfied dependency expressed through field 'fastDFSUtil'; 
+nested exception is org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'fastDFSUtil': 
+Injection of autowired dependencies failed; 
+nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'fdfs.http.storage-addr' in value "${fdfs.http.storage-addr}
+
+
+Access to XMLHttpRequest at 'https://42a4-183-200-209-51.jp.ngrok.io/videos?size=10&no=1&area=0' 
+	from origin 'http://39.107.54.180' has been blocked by CORS policy: 
+Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
